@@ -1,0 +1,33 @@
+<div *ngIf="canShowLocationForm">
+    <form class="col-10 row" [formGroup]="locationForm">
+        <div class="col-2">
+            <label l10nTranslate>city</label>
+            <input type="text" class="form-control form-control-sm" formControlName="city" required>
+        </div>
+        <div class="col-2">
+            <label l10nTranslate>street</label>
+            <input type="text" class="form-control form-control-sm" formControlName="street" required>
+        </div>
+        <div class="col-2">
+            <label l10nTranslate>buildingNumber</label>
+            <input type="number" class="form-control form-control-sm" formControlName="buildingNumber" required>
+        </div>
+        <div class="col-2">
+            <label l10nTranslate>countFloors</label>
+            <input type="number" class="form-control form-control-sm" formControlName="floors" required>
+        </div>
+        <div class="col-2">
+            <label l10nTranslate>description</label>
+            <textarea class="form-control form-control-sm" rows="2" formControlName="comment"></textarea>
+        </div>
+        <div class="col-2 m-t-md" *ngIf="!canShowLocationFormForChange">
+            <save-button [disabled]="!locationForm.valid" (click)="onSave()" [titlePlaceholder]=applyTranslate l10nTranslate></save-button>
+            <cancel-button (click)="onCancel()" [titlePlaceholder]=cancelTranslate l10nTranslate></cancel-button>
+        </div>
+        <div class="col-2 m-t-md" *ngIf="canShowLocationFormForChange">
+            <save-button [disabled]="!locationForm.valid" (click)="onChange()" [titlePlaceholder]=applyTranslate l10nTranslate></save-button>
+            <cancel-button (click)="onCancel()" [titlePlaceholder]=cancelTranslate l10nTranslate></cancel-button>
+            <delete-button (click)="onDelete()" [titlePlaceholder]=deleteTranslate l10nTranslate></delete-button>
+        </div>
+    </form>
+</div>

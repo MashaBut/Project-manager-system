@@ -1,0 +1,27 @@
+<div *ngIf="canShowDepartmentForm">
+    <form class="col-10 row" [formGroup]="departmentForm">
+        <div class="col-2">
+            <label l10nTranslate>name</label>
+            <input type="text" class="form-control form-control-sm" formControlName="name" required>
+        </div>
+        <div class="col-2">
+            <label l10nTranslate>type</label>
+            <select class="form-control form-control-sm" formControlName="type" required> 
+                <option *ngFor="let typeOfDepartment of typeOfDepartments | keyvalue" l10nTranslate>{{typeOfDepartment.key}}</option>
+            </select>
+        </div>
+        <div class="col-2">
+            <label l10nTranslate>description</label>
+            <textarea class="form-control form-control-sm" rows="2" formControlName="comment"></textarea>
+        </div>
+        <div class="col-2 m-t-md" *ngIf="!canShowDepartmentFormForChange">
+            <save-button [disabled]="!departmentForm.valid" (click)="onSave()" [titlePlaceholder]=applyTranslate l10nTranslate></save-button>
+            <cancel-button (click)="onCancel()" [titlePlaceholder]=cancelTranslate l10nTranslate></cancel-button>
+        </div>
+        <div class="col-2 m-t-md" *ngIf="canShowDepartmentFormForChange">
+            <save-button [disabled]="!departmentForm.valid" (click)="onChange()" [titlePlaceholder]=applyTranslate l10nTranslate></save-button>
+            <cancel-button (click)="onCancel()" [titlePlaceholder]=cancelTranslate l10nTranslate></cancel-button>
+            <delete-button (click)="onDelete()" [titlePlaceholder]=deleteTranslate l10nTranslate></delete-button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,19 @@
+.condensed {
+    padding: 0px;
+}
+
+.header {
+   margin-bottom: 0.5rem;
+   font-weight: 500;
+   line-height: 1.2;
+   color: #2FA4E7;
+   font-size: 1.5rem;
+}
+
+.fixed-half-height {
+   height: 50%;
+}
+
+.scrolable {
+   overflow: auto;
+}

@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" *ngIf="isGridVisible">
+      <div>
+         <span class="header" l10nTranslate>employeeList</span>
+         <add-button (click)="onAddClick($event)"
+                     [titlePlaceholder]="addTitle"
+                     [disabled]="addDisabled"></add-button>
+         <button (click)="onDetailsRequested()">{{"Детали"}}</button>
+         <edit-button  (click)="onEditClick($event)"
+                     [titlePlaceholder]="editTitle"
+                     [showCancelBtn]="false"
+                     [disabled]="editDisabled"></edit-button>
+         <delete-button (click)="onDeleteClick($event)" 
+                     [titlePlaceholder]="deleteTitle"
+                     [disabled]="deleteDisabled"></delete-button>
+         
+      </div>
+      <div>
+        <app-employee-list [employees]="employees" 
+                            [focusEntityId]="currentEmployeeId"
+                            [locked]="editingInProcess"
+                            [hideSelection]="hideSelection"
+                        (currentEmpChanged)="onCurrentEmpChanged($event)"></app-employee-list>
+      </div>
+    </div>
+    <div class="col-12" *ngIf="isDetailsVisible">
+      <app-employee-editor [employeeId]="currentEmployeeId"
+                            [viewMode]="viewMode"
+                            (canceled)="onCanceled()"
+                            (saved)="onSaved($event)"></app-employee-editor>
+    </div>
+  </div>
+</div>

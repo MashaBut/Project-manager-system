@@ -1,0 +1,9 @@
+<label for="positionSelect">Текущая должность:</label>
+<app-position-selector [position]="position" [disabled]="!editMode"></app-position-selector>
+
+<br>
+<button *ngIf="editMode" (click)="onCreateNewPosition()">{{createNewCaption}}</button>
+<app-position-creator *ngIf="creationMode"
+                        (positionAdded)="onPositionAdded()"
+                        [horizontalLayout]="false"></app-position-creator>
+

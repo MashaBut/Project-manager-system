@@ -1,0 +1,20 @@
+<table class="mytable mytable-bordered">
+    <thead class="mybg-primary">
+        <tr>
+            <th *ngFor="let column of columns">
+                <label>{{column.header}}</label>
+                <input type="image" (click)="sortBy(column)" [src]="getSortCaptionFor(column)" class="img-white" />
+                <br>
+                <input type="text" class="form-control form-control-sm" [id]="column.header" (onkeyup)="filter(column)" />
+                <!-- <button (click)="sortBy(column)">{{getSortCaptionFor(column)}}</button> -->
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of dataSource" (click)="onRowClick(data)" [class]="getRowClassFor(data)">
+            <td *ngFor="let column of columns">
+                {{getFieldValue(data, column.field)}}
+            </td>
+        </tr>
+    </tbody>
+</table>

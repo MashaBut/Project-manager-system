@@ -1,0 +1,23 @@
+.labelFilter {
+   margin: 5px;
+}
+
+.positionFilterInput {
+   margin-right: 34px;
+}
+
+.filterBlock {
+   margin-bottom: 20px;
+}
+
+.fullWidth {
+   width: 100%;
+}
+
+.disabledText {
+   background-color: #E9ECEF;
+}
+
+.enabledText {
+   background-color: white;
+}

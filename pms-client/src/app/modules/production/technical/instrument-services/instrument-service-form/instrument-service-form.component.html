@@ -1,0 +1,24 @@
+<form [formGroup]="servicesForm">
+  <div class="form-group">
+    <label>Дата сдачи в ремонт</label>
+    <input type="date" class="form-control form-control-sm" formControlName="startDate" required>
+  </div>
+  <div class="form-group">
+    <label>Дата получения из ремонта</label>
+    <input type="date" class="form-control form-control-sm" formControlName="endDate" required>
+    <p *ngIf="errorDate" class="error">Дата не корректна</p>
+  </div>
+  <div class="form-group">
+    <label>Статус</label>
+    <app-combo-box formControlName="status"
+                   [dataSource]="statusItems">
+    </app-combo-box>
+  </div>
+  <div class="form-group">
+    <label>Описание</label>
+    <textarea class="form-control form-control-sm" rows="3" formControlName="description"></textarea>
+  </div>
+  <add-button (click)="onAdd()" [disabled]="!servicesForm.valid || disabled" [titlePlaceholder]=titleAddBtn></add-button>
+
+ 
+</form>

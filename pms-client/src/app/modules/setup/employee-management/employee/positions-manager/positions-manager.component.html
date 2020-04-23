@@ -1,0 +1,58 @@
+<h3 float='left'>Менеджер должностей</h3>
+<!-- add new -->
+<h4 float='left'>Новая должность</h4>
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+      <app-position-creator [newPosition]="newPosition"></app-position-creator>
+    </div>
+    <div class="col-3">
+      <add-button (click)="onAdd()"
+                  titlePlaceholder="Добавить"
+                  [disabled]="!addEnabled"></add-button>
+    </div>
+  </div>
+</div>
+
+<hr>
+<!-- existing -->
+<h4 float='left'>Каталог должностей</h4>
+<div class="filterBlock">
+   <label for="filterPositionTitle" class="labelFilter">Фильтр по должности:</label>
+   <input type="text" [(ngModel)]="filter.title"
+                        id="filterPositionTitle">
+   <label for="filterPositionReq" class="labelFilter">Фильтр по требованиям:</label>
+   <input type="text" [(ngModel)]="filter.requirements" class="positionFilterInput"
+                        id="filterPositionReq">
+   <filter-button (click)="onFilterClick()" 
+                  titlePlaceholder="Применить фильтр"
+                  [disabled]="!filterEnabled"></filter-button>
+   <edit-button  (click)="onFilterClearClick()"
+               titlePlaceholder="Сбросить фильтр"
+               [showCancelBtn]="true"></edit-button>
+
+</div>
+<div class="container">
+  <div class="row" *ngFor="let position of filteredPositions">
+    <div class="col-3">
+      <input type="text" [(ngModel)]="position.title"
+            [readonly]="isReadonlyForPosition(position)"
+            [class]="getTextClassFor(position)">
+    </div>
+    <div class="col-6">
+      <textarea [(ngModel)]="position.requirements"
+            [readonly]="isReadonlyForPosition(position)"
+            [class]="getTextClassFor(position)"></textarea>
+    </div>
+    <div class="col-3">
+      <save-button (click)="onSave(position)" 
+                     titlePlaceholder="Сохранить"
+                     [disabled]="saveDisabledFor(position)"></save-button>
+      <edit-button (click)="onEdit(position)"
+                     [titlePlaceholder]="editCaptionFor(position)"
+                     [showCancelBtn]="showCancelBtnFor(position)"></edit-button>
+      <delete-button (click)="onDeleteClick(position)"
+                     titlePlaceholder="Удалить"></delete-button>
+    </div>
+  </div>
+</div>

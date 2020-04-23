@@ -1,0 +1,54 @@
+<div class="navigate-block">
+    <ul class="navbar navbar-dark bg-primary">
+        <li class="nav navbar-nav">
+            <a routerLink="/home" routerLinkActive="active" class="nav-link active" l10nTranslate>homePage</a>
+        </li>
+        <li class="nav nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" l10nTranslate>personnelManagement</a>
+            <div class="dropdown-menu">
+                <a routerLink="/employee" routerLinkActive="active" class="nav-link" l10nTranslate>staff</a>
+                <a routerLink="/day-off" routerLinkActive="active" class="nav-link" l10nTranslate>daysOff</a>
+                <a routerLink="/positions" routerLinkActive="active" class="nav-link" l10nTranslate>employeeAccounting</a>
+            </div>
+        </li>
+        <li class="nav nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" l10nTranslate>technicalDepartment</a>
+            <div class="dropdown-menu">
+                <a routerLink="/instrument-services" routerLinkActive="active" class="nav-link" l10nTranslate>serviceEquipment</a>
+            </div>
+        </li>
+        <li class="nav nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" l10nTranslate>manufacture</a>
+            <div class="dropdown-menu">
+                <a routerLink="/facilities" routerLinkActive="active" class="nav-link" l10nTranslate>areasOfOperation</a>
+            </div>
+        </li>
+        <li class="nav nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" l10nTranslate>warehouse</a>
+            <div class="dropdown-menu">
+                <a routerLink="/gettings-tools" routerLinkActive="active" class="nav-link" l10nTranslate>gettingTool</a>
+                <a routerLink="/materials-dictionary" routerLinkActive="active" class="nav-link" l10nTranslate>listOfMaterials</a>
+            </div>
+        </li>
+        <li class="nav navbar-nav">
+            <a routerLink="/metering" routerLinkActive="active" class="nav-link" l10nTranslate>meters</a>
+        </li>
+        <li class="nav nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" l10nTranslate>taskList</a>
+            <div class="dropdown-menu">
+                <a routerLink="/check-list-edit" routerLinkActive="active" class="nav-link" l10nTranslate>edit</a>
+                <a routerLink="/check-list-view" routerLinkActive="active" class="nav-link" l10nTranslate>view</a>
+            </div>
+        </li>
+        <li class="nav nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" l10nTranslate>language</a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="nav-link" (click)="selectLocale('en', 'US')" l10nTranslate>english</a>
+                <a class="nav-link" (click)="selectLocale('ru', 'RU')" l10nTranslate>russian</a>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="place">
+    <router-outlet></router-outlet>
+</div>

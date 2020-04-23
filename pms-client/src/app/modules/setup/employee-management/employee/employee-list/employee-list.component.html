@@ -1,0 +1,8 @@
+<app-employee-filter (applyFilter)="onApplyFilter($event)" [locked]="locked"></app-employee-filter>
+<grid [dataSource]="filteredEmployees"
+      [columns]="columns"
+      [tracktionField]="tracktionField"
+      [focusEntityId]="focusEntityId"
+      [hideSelection]="hideSelection"
+      [locked]="locked"
+      (currentRowChanged)="onRowClick($event)"></grid>
