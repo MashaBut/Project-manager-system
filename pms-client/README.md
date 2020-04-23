@@ -1,6 +1,11 @@
 # PmsClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
+# Set up
+- Node.js 6.12.1
+- Typescript 3.7.5
+- Angular version 9.0.3.
+- PostgreSQL 10
+- ASP.NET core 3.x
 
 # Start client
 - npm i
