@@ -3,6 +3,7 @@
 # Set up
 - Node.js 6.12.1
 - Typescript 3.7.5
+- Maven
 - Angular version 9.0.3.
 - PostgreSQL 10
 - ASP.NET core 3.x
