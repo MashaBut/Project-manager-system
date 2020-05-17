@@ -4,13 +4,15 @@ import { HttpClient } from '@angular/common/http';
 
 
 import { FacilitiesService } from './api/facilities.service';
+import { ToolsService } from './api/tools.service';
 
 @NgModule({
   imports:      [],
   declarations: [],
   exports:      [],
   providers: [
-    FacilitiesService ]
+    FacilitiesService,
+    ToolsService ]
 })
 export class ApiModule {
     public static forRoot(configurationFactory: () => Configuration): ModuleWithProviders {

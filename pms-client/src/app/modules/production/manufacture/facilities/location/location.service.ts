@@ -3,7 +3,7 @@ import { Location } from "../../../../../models/facilities-management/location";
 import { StorageService, StorageKey } from 'src/app/services/storage.service';
 import { LocationDTO, AddressDTO } from 'swagger-client';
 import { AddressService } from './addesss.service';
-import { HistoryService } from '../history.service';
+import { HistoryService } from 'src/app/services/history.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,7 @@ export class LocationService {
   constructor(private storageService: StorageService, private history: HistoryService, private addressService: AddressService) {
     this.locationsDTO = this.getAllLocationsDTO();
     this.locations = this.getAllLocations();
+    history.setKey(StorageKey.FacilitiesManagementHistory);
   }
 
   private getAllLocationsDTO(): Array<LocationDTO> {

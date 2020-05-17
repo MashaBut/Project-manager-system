@@ -4,12 +4,10 @@ import { EmployeeManagerComponent } from './modules/setup/employee-management/em
 import { HomeComponent } from './modules/shared/home/home.component';
 import { DayOffFormComponent } from './modules/setup/employee-management/employee/day-off/day-off-form.component';
 import { InstrumentServicesComponent } from './modules/production/technical/instrument-services/instrument-services.component';
-import { GettingToolsComponent } from './modules/production/warehouse/tools/getting-tools/getting-tools.component';
-import { MaterialsDictionaryComponent } from './modules/production/warehouse/materials/materials-dictionary/materials-dictionary.component';
-import { MeteringComponent } from './modules/production/count-register/metering/metering.component';
 import { CheckListViewComponent } from './modules/production/check-list/check-list-view/check-list-view.component';
 import { CheckListEditComponent } from './modules/production/check-list/check-list-edit/check-list-edit.component';
 import { PositionsManagerComponent } from './modules/setup/employee-management/employee/positions-manager/positions-manager.component';
+import { ToolsComponent } from './modules/production/warehouse/tools/tools/tools.component';
 
 const routes: Routes = [
   {
@@ -33,25 +31,21 @@ const routes: Routes = [
     component: InstrumentServicesComponent
   },
   {
-    path: 'gettings-tools',
-    component: GettingToolsComponent
-  },
-  {
     path: 'facilities',
     loadChildren: () => import('./modules/production/manufacture/facilities/facilities.module').then(m => m.FacilitiesModule)
   },
   {
-    path: 'materials-dictionary',
-    component: MaterialsDictionaryComponent
+    path: 'tools',
+    component: ToolsComponent
+  },
+  {
+    path: 'tool-delivery',
+    loadChildren: () => import('./modules/production/warehouse/tools/tool-delivery/tool-delivery.module').then(m => m.ToolDeliveryModule)
   },
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
-  {
-    path: 'metering',
-    component: MeteringComponent
   },
   {
     path: 'check-list-edit',

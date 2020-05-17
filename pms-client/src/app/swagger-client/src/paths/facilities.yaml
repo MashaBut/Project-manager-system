@@ -323,4 +323,81 @@
         '200':
           description: successful operation
         '405':
-          description: invalid input   
+          description: invalid input
+/tools:
+    get:
+      tags:
+        - tools
+      summary: returns array of department
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/DepartmentDTO'
+
+/tools/form:             
+    post:
+      tags:
+        - tools
+      summary: create a new tool
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ToolDTO'
+                    
+/tools/{Id}:
+    get:
+      tags:
+        - tools 
+      summary: return tool by Id
+      parameters:
+        - name: Id
+          in: path
+          description: Id of tool that needs to be return
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ToolDTO'
+        '405':
+          description: invalid input
+          
+    put:
+      tags:
+        - tools
+      summary: update tool by Id
+      parameters:
+        - name: Id
+          in: path
+          description: Id of tool that needs to be update
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: invalid input
+          
+    delete:
+      tags:
+        - tools 
+      summary: delete tool by Id
+      parameters:
+        - name: Id
+          in: path
+          description: Id of tool that needs to be delete
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: invalid input  

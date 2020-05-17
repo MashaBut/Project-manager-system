@@ -11,9 +11,12 @@ export const EN: any = {
     "city": "City",
     "countFloors": "Number of floors",
     "changed": "Changed",
+    "checkDate": "Check date",
     "cancel": "Cancel",
     //-----------------------------------------D-----------------------------------------
     "daysOff": "Days off",
+    "dateOfIssue" :"Date of issue",
+    "dateOfReturn": "Date of return",
     "description": "Description",
     "departments": "Departments",
     "delete": "Delete",
@@ -41,6 +44,7 @@ export const EN: any = {
     "meters": "Meters",
     //-----------------------------------------N-----------------------------------------
     "name": "Name",
+    "nameTool": "Title",
     "namesurnameshort": "Full name",
     //-----------------------------------------O-----------------------------------------
     "Office": "Office",
@@ -67,6 +71,9 @@ export const EN: any = {
     "taskList": "Task list",
     "type": "Type",
     "technicalDepartment": "Technical department",
+    "toolDelivery": "Tool delivery",
+    "tool": "Tool",
+    "tools": "Tools",
     "taxNumber": "Tax number",
     //-----------------------------------------U-----------------------------------------
     //-----------------------------------------V-----------------------------------------

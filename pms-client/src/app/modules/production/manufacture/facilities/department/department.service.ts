@@ -2,7 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { StorageService, StorageKey } from 'src/app/services/storage.service';
 import { TypeOfDepartmentDTO, DepartmentDTO } from 'swagger-client';
 import { Department } from 'src/app/models/facilities-management/department';
-import { HistoryService } from '../history.service';
+import { HistoryService } from 'src/app/services/history.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,7 @@ export class DepartmentService {
   constructor(private storageService: StorageService, private history: HistoryService) {
     this.departments = this.getAllDepartments();
     this.departmentsDTO = this.getAllDepartmentsDTO();
+    history.setKey(StorageKey.FacilitiesManagementHistory);
   }
 
   public getTypeOfDepartments() {
@@ -30,16 +31,16 @@ export class DepartmentService {
 
   private getAllDepartmentsDTO(): Array<DepartmentDTO> {
     let departments: Array<DepartmentDTO> = [];
-    if (this.storageService.hasKey(StorageKey.Departments)) {
-      departments = this.storageService.getTypedArray(StorageKey.Departments);
+    if (this.storageService.hasKey(StorageKey.Tools)) {
+      departments = this.storageService.getTypedArray(StorageKey.Tools);
     }
     return departments;
   }
 
   public getAllDepartments(): Array<Department> {
     let departments: Array<Department> = [];
-    if (this.storageService.hasKey(StorageKey.Departments)) {
-      departments = this.storageService.getTypedArray(StorageKey.Departments);
+    if (this.storageService.hasKey(StorageKey.Tools)) {
+      departments = this.storageService.getTypedArray(StorageKey.Tools);
     }
     return departments;
   }
@@ -69,7 +70,7 @@ export class DepartmentService {
     this.departmentsDTO.push(department);
     this.addNewDepartment.emit(<Department>department);
 
-    this.storageService.addData(StorageKey.Departments, department);
+    this.storageService.addData(StorageKey.Tools, department);
     this.history.addPointInHistory('Department', department);
   }
 
@@ -107,9 +108,9 @@ export class DepartmentService {
   }
 
   private saveArrayToLocalStorage(): void {
-    this.storageService.deleteData(StorageKey.Departments);
+    this.storageService.deleteData(StorageKey.Tools);
     this.departmentsDTO.forEach((department: DepartmentDTO) => {
-      this.storageService.addData(StorageKey.Departments, department);
+      this.storageService.addData(StorageKey.Tools, department);
     })
   }
 }

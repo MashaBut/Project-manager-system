@@ -1,0 +1,41 @@
+<div *ngIf="canShowToolDeliveryForm">
+    <form class="col-12 row" [formGroup]="toolDeliveryForm">
+        <div class="col-2">
+            <label l10nTranslate>namesurnameshort</label>
+            <select class="form-control form-control-sm" formControlName="shortname" required>
+                <option *ngFor="let employee of employees" [ngValue]="employee">
+                    {{employee.secondName + " " + employee.firstName + " " +  employee.patronymic}}
+                </option>
+            </select>
+        </div>
+        <div class="col-2">
+            <label l10nTranslate>tool</label>
+            <select class="form-control form-control-sm" formControlName="tool" required>
+                <option *ngFor="let tool of tools" [ngValue]="tool">
+                    {{tool.nameTool+ " № "+ tool.id}}
+                </option>
+            </select>
+        </div>
+        <div class="col-2">
+            <label l10nTranslate>dateOfIssue</label>
+            <input type="Date" class="form-control form-control-sm" formControlName="dateOfIssue" required>
+        </div>
+        <div class="col-2">
+            <label l10nTranslate>dateOfReturn</label>
+            <input type="Date" class="form-control form-control-sm" formControlName="dateOfReturn">
+        </div>
+        <div class="col-2">
+            <label l10nTranslate>description</label>
+            <input type="text" class="form-control form-control-sm" formControlName="description">
+        </div>
+        <div class="col-2 m-t-md" *ngIf="!canShowToolDeliveryFormForChange">
+            <save-button [disabled]="!toolDeliveryForm.valid" (click)="onSave()" [titlePlaceholder]=applyTranslate l10nTranslate></save-button>
+            <cancel-button (click)="onCancel()" [titlePlaceholder]=cancelTranslate l10nTranslate></cancel-button>
+        </div>
+        <div class="col-2 m-t-md" *ngIf="canShowToolDeliveryFormForChange">
+            <save-button [disabled]="!toolDeliveryForm.valid" (click)="onChange()" [titlePlaceholder]=applyTranslate l10nTranslate></save-button>
+            <cancel-button (click)="onCancel()" [titlePlaceholder]=cancelTranslate l10nTranslate></cancel-button>
+            <delete-button (click)="onDelete()" [titlePlaceholder]=deleteTranslate l10nTranslate></delete-button>
+        </div>
+    </form>
+</div>

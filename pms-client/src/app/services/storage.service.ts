@@ -11,6 +11,10 @@ export enum StorageKey {
   WorkAreas = 'WorkAreasStorageKey',
   WorkPlaces = 'WorkPlacesStorageKey',
   FacilitiesManagementHistory = "FacilitiesManagementHistoryStorageKey",
+  ToolsHistory = "ToolsHistoryStorageKey",
+  ToolDeliveryHistory = "ToolDeliveryHistory",
+  Tools = "ToolsStorageKey",
+  ToolsDelivery = "ToolsDeliveryStorageKey",
   CheckList = 'checkList',
 
   EmployeesStorageKey = 'EmployeesStorageKey',

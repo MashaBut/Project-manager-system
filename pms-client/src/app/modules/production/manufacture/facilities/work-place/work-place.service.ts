@@ -2,8 +2,8 @@ import { Injectable, EventEmitter, ɵConsole } from '@angular/core';
 import { WorkPlace } from 'src/app/models/facilities-management/work-place';
 import { WorkPlaceDTO, LocationDTO, WorkAreaDTO } from 'swagger-client';
 import { StorageService, StorageKey } from 'src/app/services/storage.service';
-import { HistoryService } from '../history.service';
 import { WorkAreaService } from '../work-area/work-area.service';
+import { HistoryService } from 'src/app/services/history.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +21,7 @@ export class WorkPlaceService {
   constructor(private storageService: StorageService, private history: HistoryService, private workAreaService: WorkAreaService) {
     this.workPlaces = this.getAllWorkPlaces();
     this.workPlacesDTO = this.getAllWortPlacesDTO();
+    history.setKey(StorageKey.FacilitiesManagementHistory);
   }
 
   private getAllWortPlacesDTO(): Array<WorkPlaceDTO> {

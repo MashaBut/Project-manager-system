@@ -217,6 +217,14 @@
   <li><a href="#facilitiesWorkplacesIdGet"><code><span class="http-method">get</span> /facilities/workplaces/{Id}</code></a></li>
   <li><a href="#facilitiesWorkplacesIdPut"><code><span class="http-method">put</span> /facilities/workplaces/{Id}</code></a></li>
   </ul>
+  <h4><a href="#Tools">Tools</a></h4>
+  <ul>
+  <li><a href="#toolsFormPost"><code><span class="http-method">post</span> /tools/form</code></a></li>
+  <li><a href="#toolsGet"><code><span class="http-method">get</span> /tools</code></a></li>
+  <li><a href="#toolsIdDelete"><code><span class="http-method">delete</span> /tools/{Id}</code></a></li>
+  <li><a href="#toolsIdGet"><code><span class="http-method">get</span> /tools/{Id}</code></a></li>
+  <li><a href="#toolsIdPut"><code><span class="http-method">put</span> /tools/{Id}</code></a></li>
+  </ul>
 
   <h1><a name="Facilities">Facilities</a></h1>
   <div class="method"><a name="facilitiesDepartmentsFormPost"></a>
@@ -1189,6 +1197,209 @@
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
+  <h1><a name="Tools">Tools</a></h1>
+  <div class="method"><a name="toolsFormPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /tools/form</code></pre></div>
+    <div class="method-summary">create a new tool (<span class="nickname">toolsFormPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ToolDTO">ToolDTO</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "nameTool" : "nameTool",
+  "id" : 0,
+  "checkDate" : "2000-01-23"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#ToolDTO">ToolDTO</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="toolsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /tools</code></pre></div>
+    <div class="method-summary">returns array of department (<span class="nickname">toolsGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#DepartmentDTO">DepartmentDTO</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "name" : "name",
+  "id" : 1,
+  "type" : "type"
+}, {
+  "name" : "name",
+  "id" : 1,
+  "type" : "type"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="toolsIdDelete"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /tools/{Id}</code></pre></div>
+    <div class="method-summary">delete tool by Id (<span class="nickname">toolsIdDelete</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">Id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; Id of tool that needs to be delete format: int64</div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#"></a>
+    <h4 class="field-label">405</h4>
+    invalid input
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="toolsIdGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /tools/{Id}</code></pre></div>
+    <div class="method-summary">return tool by Id (<span class="nickname">toolsIdGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">Id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; Id of tool that needs to be return format: int64</div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ToolDTO">ToolDTO</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "nameTool" : "nameTool",
+  "id" : 0,
+  "checkDate" : "2000-01-23"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#ToolDTO">ToolDTO</a>
+    <h4 class="field-label">405</h4>
+    invalid input
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="toolsIdPut"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /tools/{Id}</code></pre></div>
+    <div class="method-summary">update tool by Id (<span class="nickname">toolsIdPut</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">Id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; Id of tool that needs to be update format: int64</div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#"></a>
+    <h4 class="field-label">405</h4>
+    invalid input
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
 
   <h2><a name="__Models">Models</a></h2>
   [ Jump to <a href="#__Methods">Methods</a> ]
@@ -1197,8 +1408,12 @@
   <ol>
     <li><a href="#AddressDTO"><code>AddressDTO</code></a></li>
     <li><a href="#DepartmentDTO"><code>DepartmentDTO</code></a></li>
+    <li><a href="#EmployeeDTO"><code>EmployeeDTO</code></a></li>
     <li><a href="#FacilitiesHistoryDTO"><code>FacilitiesHistoryDTO</code></a></li>
+    <li><a href="#HistoryDTO"><code>HistoryDTO</code></a></li>
     <li><a href="#LocationDTO"><code>LocationDTO</code></a></li>
+    <li><a href="#ToolDTO"><code>ToolDTO</code></a></li>
+    <li><a href="#ToolDeliveryDTO"><code>ToolDeliveryDTO</code></a></li>
     <li><a href="#TypeOfDepartmentDTO"><code>TypeOfDepartmentDTO</code></a></li>
     <li><a href="#WorkAreaDTO"><code>WorkAreaDTO</code></a></li>
     <li><a href="#WorkPlaceDTO"><code>WorkPlaceDTO</code></a></li>
@@ -1225,7 +1440,29 @@
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3><a name="EmployeeDTO"><code>EmployeeDTO</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">firstName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">secondName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">patonymic (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3><a name="FacilitiesHistoryDTO"><code>FacilitiesHistoryDTO</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">date (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span>  format: date-time</div>
+<div class="param">user (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+<div class="param">newInfo (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+<div class="param">oldInfo (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="HistoryDTO"><code>HistoryDTO</code></a> <a class="up" href="#__Models">Up</a></h3>
     
     <div class="field-items">
       <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
@@ -1243,6 +1480,27 @@
       <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
 <div class="param">address (optional)</div><div class="param-desc"><span class="param-type"><a href="#AddressDTO">AddressDTO</a></span>  </div>
 <div class="param">comment (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ToolDTO"><code>ToolDTO</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">nameTool (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">checkDate (optional)</div><div class="param-desc"><span class="param-type"><a href="#date">date</a></span>  format: date</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ToolDeliveryDTO"><code>ToolDeliveryDTO</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">Employee (optional)</div><div class="param-desc"><span class="param-type"><a href="#EmployeeDTO">EmployeeDTO</a></span>  </div>
+<div class="param">Tool (optional)</div><div class="param-desc"><span class="param-type"><a href="#ToolDTO">ToolDTO</a></span>  </div>
+<div class="param">dateOfIssue (optional)</div><div class="param-desc"><span class="param-type"><a href="#date">date</a></span>  format: date</div>
+<div class="param">dateOfReturn (optional)</div><div class="param-desc"><span class="param-type"><a href="#date">date</a></span>  format: date</div>
+<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

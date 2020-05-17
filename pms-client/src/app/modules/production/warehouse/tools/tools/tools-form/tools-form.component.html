@@ -1,0 +1,21 @@
+<div *ngIf="canShowToolsForm">
+    <form class="col-10 row" [formGroup]="toolsForm">
+        <div class="col-3">
+            <label l10nTranslate>nameTool</label>
+            <input type="text" class="form-control form-control-sm" formControlName="nameTool" required>
+        </div>
+        <div class="col-3">
+            <label l10nTranslate>checkDate</label>
+            <input type="Date" class="form-control form-control-sm" formControlName="checkDate" required>
+        </div>
+        <div class="col-2 m-t-md" *ngIf="!canShowToolsFormForChange">
+            <save-button [disabled]="!toolsForm.valid" (click)="onSave()" [titlePlaceholder]=applyTranslate l10nTranslate></save-button>
+            <cancel-button (click)="onCancel()" [titlePlaceholder]=cancelTranslate l10nTranslate></cancel-button>
+        </div>
+        <div class="col-2 m-t-md" *ngIf="canShowToolsFormForChange">
+            <save-button [disabled]="!toolsForm.valid" (click)="onChange()" [titlePlaceholder]=applyTranslate l10nTranslate></save-button>
+            <cancel-button (click)="onCancel()" [titlePlaceholder]=cancelTranslate l10nTranslate></cancel-button>
+            <delete-button (click)="onDelete()" [titlePlaceholder]=deleteTranslate l10nTranslate></delete-button>
+        </div>
+    </form>
+</div>
